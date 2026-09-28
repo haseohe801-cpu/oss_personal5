@@ -23,13 +23,15 @@
     </style>
 </head>
 <body>
+    <!-- 제목, 입력 필드, 추가 버튼, 목록 -->
     <h2>JavaScript practice</h2>
-
     <input type="text" id="input">
     <button id="addBtn">추가</button>
+    <!-- 항목 들어갈 빈 목록. 자바 스크립트가 여기에 리스트 하나하나 채워넣음 -->
     <ul id="list"></ul>
 
     <script>
+        // 페이지의 모든 요소가 로드된 후 실행되는 함수 -- window.onload
         window.onload = function() {
             const input = document.getElementById('input');
             const addBtn = document.getElementById('addBtn');
