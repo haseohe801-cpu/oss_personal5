@@ -35,6 +35,7 @@
 <table>
     <thead>
         <tr>
+            <th>id</th>
             <th>상품명</th>
             <th>카테고리</th>
             <th>가격</th>
@@ -133,6 +134,28 @@
         render();
     });
 
+    function editProduct(id) {
+        const product = products.find(function(product) {
+            return product.id === id;
+        });
+
+        nameInput.value = product.name;
+        categoryInput.value = product.category;
+        priceInput.value = product.price;
+        stockInput.value = product.stock;
+
+        editId = id;
+        saveBtn.innerText = "Save";
+    }
+
+    function deleteProduct(id) {
+        products = products.filter(function(product) {
+            return product.id !== id;
+        });
+        render();
+    }
+
+render();
 </script>
 
 </body>
