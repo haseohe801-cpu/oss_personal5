@@ -31,13 +31,14 @@
     <ul id="list"></ul>
 
     <script>
-        // 페이지의 모든 요소가 로드된 후 실행되는 함수 -- window.onload
+        // 페이지의 모든 요소가 로드된 후 실행되는 함수 -- window.onload --> 오류 방지
         window.onload = function() {
             const input = document.getElementById('input');
             const addBtn = document.getElementById('addBtn');
             const list = document.getElementById('list');
-
+            //  버튼 클릭? -> 아래 코드 실행해
             addBtn.addEventListener('click', function() {
+                //  만약 아무것도 안 적고 추가 버튼 클릭? --> 경고창 뜨면서 리턴
                 if (input.value.trim() === "") {
                     alert("Please enter a value.");
                     return;
