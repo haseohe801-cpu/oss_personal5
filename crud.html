@@ -13,7 +13,24 @@
         }
     </style>
 </head>
+
 <body>
+<h1>Product Management</h1>
+
+    <form id="productForm">
+        <input type="text" id="name" placeholder="상품명">
+
+        <select id="category">
+            <option value="">카테고리 선택</option>
+            <option value="electronics">Food</option>
+            <option value="clothing">Electronics</option>
+            <option value="books">Clothing</option>
+        </select>
+
+        <input type="number" id="price" placeholder="가격">
+        <input type="number" id="stock" placeholder="재고">
+        <button type="submit" id="saveBtn">add</button>
+    </form>
 
 </body>
 </html>
