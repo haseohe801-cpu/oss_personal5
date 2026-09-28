@@ -62,6 +62,77 @@
     const list = document.getElementById('productList');
     const saveBtn = document.getElementById('saveBtn');
 
+
+    function render(){
+        list.innerHTML = "";
+
+        products.forEach(function(product) {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td>${product.category}</td>
+                <td>${product.price}</td>
+                <td>${product.stock}</td>
+                <td>
+                    <button class="edit" onclick="editProduct(${product.id})">수정</button>
+                    <button class="delete" onclick="deleteProduct(${product.id})">삭제</button>
+                </td>
+            `;
+
+            list.appendChild(row);
+        });
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if (nameInput.value.trim() === "") {
+            alert("상품명을 입력하세요.");
+            nameInput.focus();
+            return;
+        }
+        if (categoryInput.value === "") {
+            alert("카테고리를 선택하세요.");
+            categoryInput.focus();
+            return;
+        }
+        if (priceInput.value === "") {
+            alert("가격을 입력하세요.");
+            priceInput.focus();
+            return;
+        }
+        if (stockInput.value === "") {
+            alert("재고를 입력하세요.");
+            stockInput.focus();
+            return;
+        }
+        if (editId === null) {
+        products.push({
+            id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
+            name: nameInput.value,
+            category: categoryInput.value,
+            price: Number(priceInput.value),
+            stock: Number(stockInput.value)
+        });
+        } else {
+            const product = products.find(function(product) {
+            return product.id === editId;
+        });
+
+        product.name = nameInput.value;
+        product.category = categoryInput.value;
+        product.price = Number(priceInput.value);
+        product.stock = Number(stockInput.value);
+
+        editId = null;
+        saveBtn.innerText = "Add";
+    }
+        form.reset();
+        render();
+    });
+
 </script>
 
 </body>
