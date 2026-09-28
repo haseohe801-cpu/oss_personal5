@@ -40,7 +40,7 @@
             <th>카테고리</th>
             <th>가격</th>
             <th>재고</th>
-            <th>Actions</th>
+            <th>제품관리</th>
         </tr>
     </thead>
     <tbody id="productList"></tbody>
@@ -149,6 +149,9 @@
     }
 
     function deleteProduct(id) {
+        if (!confirm("삭제하시겠습니까?")) {
+            return;
+        }  
         products = products.filter(function(product) {
             return product.id !== id;
         });
