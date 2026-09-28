@@ -51,5 +51,4 @@ Reflection
 
 이번 과제를 통해 JavaScript가 HTML 요소를 직접 가져오고 변경할 수 있다는 것을 알게 되었다. 특히 Array에 데이터를 저장하고 render()를 이용하여 리로드하는 방식이 CRUD의 동작과 연결된다는 것을 이해했다.
 
-Create와 Update에서 입력값을 검사하는 Validation이 중요하다는 것도 알게 되었다.
-앞으로는 데이터를 실제 DB에 저장하는 방식과 JavaScript Array를 사용하는 방식의 차이도 더 알아보고 싶다.
+Create와 Update에서 입력값을 검사하는 Validation을 반복적으로 하다보니 보안 관련한 것도 궁금해졌다.
