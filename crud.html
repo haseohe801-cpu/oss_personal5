@@ -45,6 +45,24 @@
     <tbody id="productList"></tbody>
 </table>
 
+<script>
+    let products = [
+        {id: 1, name: "Keyboard", category: "Electronics", price: 30000, stock: 10},
+        {id: 2, name: "T-shirt", category: "Clothing", price: 20000, stock: 20},
+        {id: 3, name: "Ramen", category: "Food", price: 5000, stock: 50}
+    ];
+
+    let editId = null;
+
+    const form = document.getElementById('productForm');
+    const nameInput = document.getElementById('name');
+    const categoryInput = document.getElementById('category');
+    const priceInput = document.getElementById('price');
+    const stockInput = document.getElementById('stock');
+    const list = document.getElementById('productList');
+    const saveBtn = document.getElementById('saveBtn');
+
+</script>
 
 </body>
 </html>
